@@ -22,8 +22,9 @@
             </li>
             <li>
                 <span>Battery</span>
-                <dl>
+                <dl v-if="phone.battery">
                     <dt>Type</dt>
+
                     <dd>{{phone.battery.type}}</dd>
                     <dt>Talk Time</dt>
                     <dd>{{phone.battery.talkTime}}</dd>
@@ -33,7 +34,7 @@
             </li>
             <li>
                 <span>Storage and Memory</span>
-                <dl>
+                <dl v-if="phone.storage">
                     <dt>RAM</dt>
                     <dd>{{phone.storage.ram}}</dd>
                     <dt>Internal Storage</dt>
@@ -42,7 +43,7 @@
             </li>
             <li>
                 <span>Connectivity</span>
-                <dl>
+                <dl v-if="phone.connectivity">
                     <dt>Network Support</dt>
                     <dd>{{phone.connectivity.cell}}</dd>
                     <dt>WiFi</dt>
@@ -57,7 +58,7 @@
             </li>
             <li>
                 <span>Android</span>
-                <dl>
+                <dl v-if="phone.android">
                     <dt>OS Version</dt>
                     <dd>{{phone.android.os}}</dd>
                     <dt>UI</dt>
@@ -66,7 +67,7 @@
             </li>
             <li>
                 <span>Size and Weight</span>
-                <dl>
+                <dl v-if="phone.sizeAndWeight">
                     <dt>Dimensions</dt>
                     <dd v-for="dim in phone.sizeAndWeight.dimensions">{{dim}}</dd>
                     <dt>Weight</dt>
@@ -75,7 +76,7 @@
             </li>
             <li>
                 <span>Display</span>
-                <dl>
+                <dl v-if="phone.display">
                     <dt>Screen size</dt>
                     <dd>{{phone.display.screenSize}}</dd>
                     <dt>Screen resolution</dt>
@@ -86,7 +87,7 @@
             </li>
             <li>
                 <span>Hardware</span>
-                <dl>
+                <dl v-if="phone.hardware">
                     <dt>CPU</dt>
                     <dd>{{phone.hardware.cpu}}</dd>
                     <dt>USB</dt>
@@ -101,7 +102,7 @@
             </li>
             <li>
                 <span>Camera</span>
-                <dl>
+                <dl v-if="phone.camera">
                     <dt>Primary</dt>
                     <dd>{{phone.camera.primary}}</dd>
                     <dt>Features</dt>
@@ -123,7 +124,7 @@
         name: 'phone-details',
         data () {
             return {
-                phone: {battery: {}},
+                phone: {},
                 mainImgURL: ''
             }
         },
